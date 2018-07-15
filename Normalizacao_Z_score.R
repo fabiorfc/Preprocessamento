@@ -5,7 +5,7 @@
 normalizacao.Z = function(x, nulos = 0) {
   
   #Etapa de tipagem dos dados
-  if(is.data.frame(teste)) teste = teste[[1]] 
+  if(is.data.frame(x)) x = x[[1]] 
   x = as.vector(x)
   
   #Cálculo das medidas estatísticas
@@ -13,8 +13,6 @@ normalizacao.Z = function(x, nulos = 0) {
   desvp = sd(x, na.rm = TRUE)
   
   z = (x - media)/desvp
-  
-  
   
   #Substituindo nulos por zeros
   z[is.na(z)] = nulos
